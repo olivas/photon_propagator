@@ -1,4 +1,5 @@
 #include <photon_propagator/cpp/device.hpp>
+#include <photon_propagator/cuda/check_error.cuh>
 
 Device::Device(int device_number):
   device_number_(device_number)
