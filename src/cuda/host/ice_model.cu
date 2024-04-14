@@ -1,7 +1,7 @@
 
 #include <fstream>
 #include <iostream>
-#include <photon_propagator/ice_model.hpp>
+#include <photon_propagator/cpp/ice_model.hpp>
 
 #include <photon_propagator/cuda/check_error.cuh>
 

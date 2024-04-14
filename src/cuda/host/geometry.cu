@@ -4,7 +4,7 @@
 
 #include <boost/filesystem.hpp>
 
-#include <photon_propagator/geometry.hpp>
+#include <photon_propagator/cpp/geometry.hpp>
 #include <photon_propagator/cuda/check_error.cuh>
 
 using std::ifstream;

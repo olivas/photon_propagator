@@ -3,7 +3,7 @@
 #include <map>
 #include <boost/filesystem.hpp>
 
-#include <photon_propagator/device_structs/dom.h>
+#include <photon_propagator/cuda/device_structs/dom.cuh>
 
 class Geometry{  
 public:

@@ -2,7 +2,7 @@
 #include <vector>
 
 #include <boost/filesystem.hpp>
-#include <photon_propagator/device_structs/ice_color.h>
+#include <photon_propagator/cuda/device_structs/ice_color.cuh>
 
 class IceModel{
 public:

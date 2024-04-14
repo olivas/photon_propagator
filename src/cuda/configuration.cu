@@ -5,7 +5,7 @@
 #include <fstream>
 #include <iostream>
 
-#include <photon_propagator/configuration.hpp>
+#include <photon_propagator/cpp/configuration.hpp>
 #include <photon_propagator/cuda/check_error.cuh>
 
 using std::string;

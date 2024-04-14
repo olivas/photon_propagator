@@ -3,9 +3,9 @@
 #include <iostream>
 #include <boost/filesystem.hpp>
 
-#include <photon_propagator/device.hpp>
-#include <photon_propagator/configuration.hpp>
-#include <photon_propagator/ice_model.hpp>
+#include <photon_propagator/cpp/device.hpp>
+#include <photon_propagator/cpp/configuration.hpp>
+#include <photon_propagator/cpp/ice_model.hpp>
 
 using std::cerr;
 using std::endl;

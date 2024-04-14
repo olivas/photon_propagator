@@ -8,9 +8,9 @@ add_library(photon_propagator_cuda SHARED
         src/cuda/device.cu
         src/cuda/random.cu
         #src/cuda/cascades_to_photons.cu
-        #src/cuda/configuration.cu
-        #src/cuda/ice_model.cu
-        #src/cuda/geometry.cu
+        src/cuda/configuration.cu
+        src/cuda/host/ice_model.cu
+        src/cuda/host/geometry.cu
         #src/cuda/optical_module_lines.cu
         #src/cuda/hits.cu
         #src/cuda/photons.cu

@@ -16,18 +16,18 @@ set_property(TARGET test_random PROPERTY CUDA_ARCHITECTURES OFF)
 target_link_libraries(test_random photon_propagator_cuda ${Boost_LIBRARIES})
 add_test(test_random bin/test_random)
 
-#add_executable(test_configuration tests/test_configuration.cpp)
-#target_link_libraries(test_configuration photon_propagator_cuda ${Boost_LIBRARIES})
-#add_test(test_configuration bin/test_configuration ${ICE_MODEL_PATH})
-#
-#add_executable(test_ice_model tests/test_ice_model.cpp)
-#target_link_libraries(test_ice_model photon_propagator_cuda ${Boost_LIBRARIES})
-#add_test(test_ice_model bin/test_ice_model ${ICE_MODEL_PATH})
-#
-#add_executable(test_geometry tests/test_geometry.cpp)
-#target_link_libraries(test_geometry photon_propagator_cuda ${Boost_LIBRARIES})
-#add_test(test_geometry bin/test_geometry ${GEOMETRY_FILE})
-#
+add_executable(test_configuration tests/test_configuration.cpp)
+target_link_libraries(test_configuration photon_propagator_cuda ${Boost_LIBRARIES})
+add_test(test_configuration bin/test_configuration ${ICE_MODEL_PATH})
+
+add_executable(test_ice_model tests/test_ice_model.cpp)
+target_link_libraries(test_ice_model photon_propagator_cuda ${Boost_LIBRARIES})
+add_test(test_ice_model bin/test_ice_model ${ICE_MODEL_PATH})
+
+add_executable(test_geometry tests/test_geometry.cpp)
+target_link_libraries(test_geometry photon_propagator_cuda ${Boost_LIBRARIES})
+add_test(test_geometry bin/test_geometry ${GEOMETRY_FILE})
+
 #add_executable(test_optical_module_lines tests/test_optical_module_lines.cpp)
 #target_link_libraries(test_optical_module_lines photon_propagator_cuda ${Boost_LIBRARIES})
 #add_test(test_optical_module_lines bin/test_optical_module_lines ${GEOMETRY_FILE} ${ICE_MODEL_PATH})

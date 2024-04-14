@@ -1,7 +1,7 @@
 # pragma once
 
 #include <boost/filesystem.hpp>
-#include <photon_propagator/device_structs/configuration.h>
+#include <photon_propagator/cuda/device_structs/configuration.cuh>
 
 class Configuration{
 public:
