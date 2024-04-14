@@ -3,7 +3,7 @@
 #include <iostream>
 
 #include <photon_propagator/cpp/device.hpp>
-#include <photon_propagator/cpp/random.hpp>
+#include <photon_propagator/cuda/random.cuh>
 
 using std::cerr;
 using std::endl;
