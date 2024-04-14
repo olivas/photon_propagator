@@ -2,8 +2,8 @@
 project(icecube_photon_propagator LANGUAGES CXX CUDA)
 
 # nvcc only currently supports up to C++14 
-set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_CUDA_STANDARD 14)
+set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CUDA_STANDARD 23)
 
 set(CMAKE_BUILD_TYPE DEBUG)
 
