@@ -4,7 +4,15 @@ enable_testing()
 set(ICE_MODEL_PATH ../resources/ice/mie)
 set(GEOMETRY_FILE ../resources/detector/icecube.txt)
 
-add_executable(test_random tests/test_random.cpp)
+add_executable(test_random tests/test_random.cu)
+set_target_properties(test_random
+        PROPERTIES CUDA_SEPARABLE_COMPILATION ON
+)
+set_target_properties(test_random
+        PROPERTIES POSITION_INDEPENDENT_CODE ON
+)
+set_property(TARGET test_random PROPERTY CUDA_ARCHITECTURES OFF)
+
 target_link_libraries(test_random photon_propagator_cuda ${Boost_LIBRARIES})
 add_test(test_random bin/test_random)
 
