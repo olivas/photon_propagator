@@ -3,9 +3,9 @@
 #include <map>
 #include <boost/filesystem.hpp>
 
-#include <photon_propagator/geometry.hpp>
-#include <photon_propagator/configuration.hpp>
-#include <photon_propagator/device_structs/optical_module_line.h>
+#include <photon_propagator/cpp/geometry.hpp>
+#include <photon_propagator/cpp/configuration.hpp>
+#include <photon_propagator/cuda/device_structs/optical_module_line.cuh>
 
 class OpticalModuleLines{  
 public:

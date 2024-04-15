@@ -3,8 +3,8 @@
 #include <iostream>
 #include <boost/filesystem.hpp>
 
-#include <photon_propagator/device.hpp>
-#include <photon_propagator/hits.hpp>
+#include <photon_propagator/cpp/device.hpp>
+#include <photon_propagator/cpp/hits.hpp>
 
 using std::cerr;
 using std::endl;

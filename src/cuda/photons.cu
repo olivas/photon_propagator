@@ -1,8 +1,8 @@
 #include <iostream>
 #include <sstream>
 
-#include <photon_propagator/photons.hpp>
-#include <photon_propagator/device_structs/photon.h>
+#include <photon_propagator/cpp/photons.hpp>
+#include <photon_propagator/cuda/device_structs/photon.cuh>
 #include <photon_propagator/cuda/check_error.cuh>
 
 using std::stringstream;

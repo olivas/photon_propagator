@@ -4,9 +4,9 @@
 #include <vector>
 #include <array>
 
-#include <photon_propagator/device.hpp>
-#include <photon_propagator/random.hpp>
-#include <photon_propagator/test_rotate.hpp>
+#include <photon_propagator/cpp/device.hpp>
+#include <photon_propagator/cpp/test_rotate.hpp>
+#include <photon_propagator/cuda/random.cuh>
 
 using std::cerr;
 using std::endl;

@@ -1,8 +1,8 @@
 #include <iostream>
 #include <sstream>
 
-#include <photon_propagator/hits.hpp>
-#include <photon_propagator/device_structs/hit.h>
+#include <photon_propagator/cpp/hits.hpp>
+#include <photon_propagator/cuda/device_structs/hit.cuh>
 #include <photon_propagator/cuda/check_error.cuh>
 
 Hits::Hits(const size_t hit_buffer_size){

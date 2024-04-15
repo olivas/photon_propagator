@@ -2,10 +2,10 @@
 
 #include <curand_kernel.h>
 
-#include <photon_propagator/constants.h>
-#include <photon_propagator/device_structs/ice_color.h>
-#include <photon_propagator/device_structs/photon.h>
-#include <photon_propagator/device_structs/cascade.h>
+#include <photon_propagator/cpp/constants.hpp>
+#include <photon_propagator/cuda/device_structs/ice_color.cuh>
+#include <photon_propagator/cuda/device_structs/photon.cuh>
+#include <photon_propagator/cuda/device_structs/cascade.cuh>
 #include <photon_propagator/cuda/gamma.cuh>
 #include <photon_propagator/cuda/rotate.cuh>
 

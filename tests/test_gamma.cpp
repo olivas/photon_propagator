@@ -3,8 +3,8 @@
 #include <iostream>
 #include <memory>
 
-#include <photon_propagator/device.hpp>
-#include <photon_propagator/gamma.hpp>
+#include <photon_propagator/cpp/device.hpp>
+#include <photon_propagator/cpp/gamma.hpp>
 
 using std::cerr;
 using std::endl;

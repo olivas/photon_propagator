@@ -27,9 +27,10 @@ public:
 
     void gamma(std::vector<float> &result, const float k);
 
+    curandState_t* __device_ptr;
+
 private:
 
-    curandState_t* __device_ptr;
     unsigned number_of_blocks_;
     unsigned threads_per_block_;
     const std::shared_ptr <Device> &device_;

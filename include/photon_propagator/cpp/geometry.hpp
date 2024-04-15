@@ -13,14 +13,14 @@ public:
   {
     configure(geometry_filename);
   };
-  
-  struct Position{
-    unsigned index;
-    float x;
-    float y;
-    float z;
-  };
-  
+
+    struct Position{
+        unsigned index;
+        float x;
+        float y;
+        float z;
+    };
+
   struct OpticalModule{
     Position position;
     float hv;

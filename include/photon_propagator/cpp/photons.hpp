@@ -3,7 +3,7 @@
 #include <vector>
 #include <memory>
 
-#include <photon_propagator/device.hpp>
+#include <photon_propagator/cpp/device.hpp>
 
 struct photon;
 
@@ -22,8 +22,7 @@ public:
     float x,y,z;
   };
   
-  void add(const Position&,
-	   const Direction &);
+  void add(const Position&, const Direction &);
   
   size_t nbytes() const;
 

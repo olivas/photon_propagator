@@ -2,7 +2,7 @@
 #include <array>
 #include <vector>
 
-#include <photon_propagator/random.hpp>
+#include <photon_propagator/cuda/random.cuh>
 
 namespace test{
 

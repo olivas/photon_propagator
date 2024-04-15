@@ -3,15 +3,15 @@
 #include <iostream>
 #include <boost/filesystem.hpp>
 
-#include <photon_propagator/device.hpp>
-#include <photon_propagator/random.hpp>
-#include <photon_propagator/geometry.hpp>
-#include <photon_propagator/configuration.hpp>
-#include <photon_propagator/ice_model.hpp>
-#include <photon_propagator/particle.hpp>
-#include <photon_propagator/cascades.hpp>
-#include <photon_propagator/photons.hpp>
-#include <photon_propagator/cascades_to_photons.hpp>
+#include <photon_propagator/cpp/device.hpp>
+#include <photon_propagator/cpp/geometry.hpp>
+#include <photon_propagator/cpp/configuration.hpp>
+#include <photon_propagator/cpp/ice_model.hpp>
+#include <photon_propagator/cpp/particle.hpp>
+#include <photon_propagator/cpp/cascades.hpp>
+#include <photon_propagator/cpp/photons.hpp>
+#include <photon_propagator/cpp/cascades_to_photons.hpp>
+#include <photon_propagator/cuda/random.cuh>
 
 using std::cerr;
 using std::endl;
@@ -21,8 +21,8 @@ using boost::filesystem::exists;
 
 int main(int argc, char* argv[]){
 
-  if(argc != 3){
-    std::cerr<<"Usage: test_geometry <ICE_MODEL_PATH>"<<std::endl;
+  if(argc != 2){
+    std::cerr<<"Usage: test_cascades_to_photons <ICE_MODEL_PATH>"<<std::endl;
     std::exit(-1);
   }
   

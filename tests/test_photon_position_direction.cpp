@@ -3,8 +3,8 @@
 #include <iostream>
 #include <boost/filesystem.hpp>
 
-#include <photon_propagator/device.hpp>
-#include <photon_propagator/photon_position_direction.hpp>
+#include <photon_propagator/dcpp/evice.hpp>
+#include <photon_propagator/cpp/photon_position_direction.hpp>
 
 using std::cerr;
 using std::endl;

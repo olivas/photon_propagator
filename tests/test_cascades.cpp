@@ -5,9 +5,9 @@
 
 #include <boost/filesystem.hpp>
 
-#include <photon_propagator/device.hpp>
-#include <photon_propagator/particle.hpp>
-#include <photon_propagator/cascades.hpp>
+#include <photon_propagator/cpp/device.hpp>
+#include <photon_propagator/cpp/particle.hpp>
+#include <photon_propagator/cpp/cascades.hpp>
 
 using std::cerr;
 using std::endl;

@@ -1,8 +1,8 @@
 #include <curand_kernel.h>
 
 #include "util.cu"
-#include "gamma.cu"
-#include "rotate.cu"
+#include "device/gamma.cu"
+#include "device/rotate.cu"
 
 __global__ void generate_photons(curandState_t* rng_state,				 
 				 ices* ice_model,

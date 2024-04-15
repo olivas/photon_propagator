@@ -3,35 +3,54 @@
 #include <vector>
 #include <memory>
 
-#include <photon_propagator/device.hpp>
-#include <photon_propagator/particle.hpp>
+#include <photon_propagator/cpp/device.hpp>
+#include <photon_propagator/cpp/particle.hpp>
 
 struct track;
 
-class Tracks{  
+class Tracks {
 public:
 
-  Tracks(const size_t count, const std::shared_ptr<Device>& device);
+    /*
+    struct Position {
+        float x;
+        float y;
+        float z;
+        float time;
+    };
 
-  ~Tracks();
-  
-  void add(const particle& p);
-  
-  size_t nbytes() const;
+    struct Direction {
+        float x;
+        float y;
+        float z;
+    };
 
-  size_t n_photons() const;
+    struct Parameters{
+        float l;
+        float f;
+    };
+*/
+    Tracks(const size_t count, const std::shared_ptr <Device> &device);
 
-  void to_device();
-  
-  track* __device_ptr;
-  
-  void pprint() const {};
+    ~Tracks();
 
-private:  
+    void add(const particle &p);
 
-  size_t count_;
-  std::vector<track> host_tracks_;
-  const std::shared_ptr<Device>& device_;
-   
+    size_t nbytes() const;
+
+    size_t n_photons() const;
+
+    void to_device();
+
+    track *__device_ptr;
+
+    void pprint() const {};
+
+private:
+
+    size_t count_;
+    std::vector <track> host_tracks_;
+    const std::shared_ptr <Device> &device_;
+
 };
 

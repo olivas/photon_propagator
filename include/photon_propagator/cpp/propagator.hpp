@@ -8,13 +8,16 @@
 
 #include <curand_kernel.h>
 
-#include <photon_propagator/device.hpp>
-#include <photon_propagator/configuration.hpp>
-#include <photon_propagator/ice_model.hpp>
-#include <photon_propagator/geometry.hpp>
-#include <photon_propagator/optical_module_lines.hpp>
-#include <photon_propagator/hits.hpp>
-#include <photon_propagator/photons.hpp>
+#include <photon_propagator/cpp/device.hpp>
+#include <photon_propagator/cpp/configuration.hpp>
+#include <photon_propagator/cpp/ice_model.hpp>
+#include <photon_propagator/cpp/geometry.hpp>
+#include <photon_propagator/cpp/particle.hpp>
+#include <photon_propagator/cpp/tracks.hpp>
+#include <photon_propagator/cpp/cascades.hpp>
+#include <photon_propagator/cpp/optical_module_lines.hpp>
+#include <photon_propagator/cpp/hits.hpp>
+#include <photon_propagator/cpp/photons.hpp>
 
 class Propagator{
 private:
@@ -56,6 +59,8 @@ public:
   // this just propagates photons.
   // the conversion from particles to photons
   // happens elsewhere.
-  void propagte(const Photons& host_photons);
+  void propagate(const Photons&);
+  void execute();
+  void fill(const particle&, Tracks&, Cascades&);
 };
 

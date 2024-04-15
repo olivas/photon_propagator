@@ -1,8 +1,9 @@
-#include <photon_propagator/cuda/check_error.cuh>
 
-#include <photon_propagator/propagator.hpp>
-#include <photon_propagator/photons.hpp>
-#include <photon_propagator/photon_yield.hpp>
+#include <photon_propagator/cpp/propagator.hpp>
+#include <photon_propagator/cpp/photons.hpp>
+#include <photon_propagator/cpp/photon_yield.hpp>
+
+#include <photon_propagator/cuda/check_error.cuh>
 
 // Not ready yet.
 //#include "propagation_kernel.cu"
@@ -22,7 +23,7 @@ Propagator::Propagator(const std::shared_ptr<Device>& device,
   number_of_blocks_(1),
   threads_per_block_(1024),
   host_hits_(hit_buffer_size),
-  host_photons_(photon_size, device),
+  //host_photons_(photon_size, device),
   time_spent_on_device_(0)
 {
           
@@ -100,11 +101,11 @@ Propagator::fill(const particle& particle, Tracks& tracks, Cascades& cascades){
   float eff{1.};
   if(particle.is_muon()){
     // specific to muons
-    Tracks::Position pos{particle.position[0], particle.position[1], particle.position[2], particle.time};
-    Tracks::Direction dir{particle.direction[0], particle.direction[1], particle.direction[2]};
-    Tracks::Parameters params;
-    params.l = particle.length;
-    params.f = 1./photon_yield::bare_muon::sub_threshold_cascades_fraction(particle.energy);
+    //Tracks::Position pos{particle.position[0], particle.position[1], particle.position[2], particle.time};
+    //Tracks::Direction dir{particle.direction[0], particle.direction[1], particle.direction[2]};
+    //Tracks::Parameters params;
+    //params.l = particle.length;
+    //params.f = 1./photon_yield::bare_muon::sub_threshold_cascades_fraction(particle.energy);
     float n_photons{eff * photon_yield::bare_muon::yield(particle.energy, particle.length)};
 
     const unsigned photon_bunch_size{10}; // this scales with oversize factor
@@ -112,19 +113,21 @@ Propagator::fill(const particle& particle, Tracks& tracks, Cascades& cascades){
     for(unsigned long long photon_count{0};
 	photon_count < photon_yield;
 	photon_count += photon_bunch_size){
-      tracks.add(pos, dir, params);
+        //tracks.add(pos, dir, params);
+        tracks.add(particle);
     }
     
   }else{
     // specific to cascades
-    Cascades::Position pos{particle.position[0], particle.position[1], particle.position[2], particle.time};
-    Cascades::Direction dir{particle.direction[0], particle.direction[1], particle.direction[2]};
-    Cascades::Parameters params;
+    //Cascades::Position pos{particle.position[0], particle.position[1], particle.position[2], particle.time};
+    //Cascades::Direction dir{particle.direction[0], particle.direction[1], particle.direction[2]};
+    //Cascades::Parameters params;
     
-    std::pair<float, float> long_params = photon_yield::cascade::longitudinal_profile_parameters(particle.energy,
-												 particle_type);
-    params.a = long_params.first;
-    params.b = long_params.second;
+    //std::pair<float, float> long_params = photon_yield::cascade::longitudinal_profile_parameters(particle.energy,
+	//											 particle_type);
+    //params.a = long_params.first;
+    //params.b = long_params.second;
+
     float n_photons{eff * photon_yield::cascade::yield(particle.energy, particle_type)};
 
     const unsigned photon_bunch_size{10}; // this scales with oversize factor
@@ -132,7 +135,8 @@ Propagator::fill(const particle& particle, Tracks& tracks, Cascades& cascades){
     for(unsigned long long photon_count{0};
 	photon_count < photon_yield;
 	photon_count += photon_bunch_size){
-      cascades.add(pos, dir, params);
+        //cascades.add(pos, dir, params);
+        cascades.add(particle);
     }
     
   }

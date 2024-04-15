@@ -3,37 +3,57 @@
 #include <vector>
 #include <memory>
 
-#include <photon_propagator/device.hpp>
-#include <photon_propagator/particle.hpp>
+#include <photon_propagator/cpp/device.hpp>
+#include <photon_propagator/cpp/particle.hpp>
 
 struct cascade;
 
-class Cascades{  
+class Cascades {
 public:
 
-  Cascades(const size_t count, const std::shared_ptr<Device>& device);
+    /*
+    struct Position {
+        float x;
+        float y;
+        float z;
+        float time;
+    };
 
-  ~Cascades();
-  
-  void add(const particle& p);
-  
-  size_t nbytes() const;
+    struct Direction {
+        float x;
+        float y;
+        float z;
+    };
 
-  size_t n_photons() const;
-  
-  void to_device();
-  
-  cascade* __device_ptr;
-  
-  void pprint() const {};
+    struct Parameters {
+        float a;
+        float b;
+    };
+*/
 
-  const cascade& at(size_t idx) const;
-  
-private:  
+    Cascades(const size_t count, const std::shared_ptr <Device> &device);
 
-  size_t count_;
-  std::vector<cascade> host_cascades_;
-  const std::shared_ptr<Device>& device_;
-   
+    ~Cascades();
+
+    void add(const particle &p);
+
+    size_t nbytes() const;
+
+    size_t n_photons() const;
+
+    void to_device();
+
+    cascade *__device_ptr;
+
+    void pprint() const {};
+
+    const cascade &at(size_t idx) const;
+
+private:
+
+    size_t count_;
+    std::vector <cascade> host_cascades_;
+    const std::shared_ptr <Device> &device_;
+
 };
 

@@ -5,7 +5,7 @@
 
 #include <boost/filesystem.hpp>
 
-#include <photon_propagator/optical_module_lines.hpp>
+#include <photon_propagator/cpp/optical_module_lines.hpp>
 #include <photon_propagator/cuda/check_error.cuh>
 
 using std::ifstream;

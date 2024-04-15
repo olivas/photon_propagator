@@ -3,13 +3,13 @@
 
 // this is getting confusing
 // this is the kernel that we're going to launch.
-#include <photon_propagator/cuda/cascades_to_photons.cuh>
 #include <photon_propagator/cpp/device.hpp>
-#include <photon_propagator/cpp/random.hpp>
-#include <photon_propagator/ice_model.hpp>
-#include <photon_propagator/cascades.hpp>
-#include <photon_propagator/photons.hpp>
-#include <photon_propagator/cascades_to_photons.hpp>
+#include <photon_propagator/cpp/ice_model.hpp>
+#include <photon_propagator/cpp/cascades.hpp>
+#include <photon_propagator/cpp/photons.hpp>
+#include <photon_propagator/cpp/cascades_to_photons.hpp>
+#include <photon_propagator/cuda/random.cuh>
+#include <photon_propagator/cuda/cascades_to_photons.cuh>
 
 void cascades::GeneratePhotons(const Random& rng,
 			       const IceModel& ice_model,

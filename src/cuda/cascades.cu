@@ -1,10 +1,10 @@
 #include <iostream>
 #include <sstream>
 
-#include <photon_propagator/device_structs/cascade.h>
-#include <photon_propagator/cascades.hpp>
-#include <photon_propagator/particle.hpp>
-#include <photon_propagator/photon_yield.hpp>
+#include <photon_propagator/cpp/cascades.hpp>
+#include <photon_propagator/cpp/particle.hpp>
+#include <photon_propagator/cpp/photon_yield.hpp>
+#include <photon_propagator/cuda/device_structs/cascade.cuh>
 #include <photon_propagator/cuda/check_error.cuh>
 
 using std::stringstream;
